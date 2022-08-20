@@ -1,14 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { SearchBar } from './src/SearchBar';
+import { HomePage } from './src/HomePage';
 
+ 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>GitRepoConsumer</Text>
-      <SearchBar />
       <StatusBar style="auto" translucent={false} backgroundColor="transparent" />
+      <HomePage />
+      
     </View>
+    
   );
 }
 
@@ -16,11 +18,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: 10
+    padding: 10,
+    // overflow: 'scroll'
   },
-  title: {
-    fontWeight: "bold",
-    fontSize: 24
-  }
+ 
 
 });
