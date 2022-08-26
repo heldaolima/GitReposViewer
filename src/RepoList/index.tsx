@@ -3,25 +3,15 @@ import { View, Text, FlatList } from 'react-native';
 import axios from 'axios';
 
 import { styles } from './styles';
-
-interface Repository {
-  id: string;
-  name: string;
-  description: string;
-}
-
+import { Repository} from '../HomePage';
 
 interface Props {
   repoList: Repository[];
   isFetching?: boolean;
   notFound: boolean;
-  onContentLoaded?: () => void;
-  setNotFound: () => void;
 }
 
-// https://api.github.com/users/${userName}/repos
-
-export function RepoList({repoList, notFound, setNotFound}:Props) {
+export function RepoList({repoList, notFound}:Props) {
   function renderItem(repo: Repository) {
     return (
       <View style={styles.repoContainer}>
@@ -32,7 +22,6 @@ export function RepoList({repoList, notFound, setNotFound}:Props) {
   
   if (notFound){
     return <Text>No user was found</Text>
-    
   } 
 
   return (
