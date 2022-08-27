@@ -21,9 +21,9 @@ export interface UserInfo {
     login: string;
     avatar_url: string;
     name: string;
-    public_repos: Number;
-    followers: Number;
-    following: Number;
+    public_repos: string;
+    followers: string;
+    following: string;
 }
 
 export function HomePage() {
@@ -34,26 +34,36 @@ export function HomePage() {
     const [repoList, setRepoList] = useState<Repository[]>([]);
     
     
-    function handleSubmit() {
+    async function handleSubmit() {
         setIsFetching(true);
         
         try {
-            fetchUser();
-            fetchRepos();
+            const userResponse = await axios.get(`https://api.github.com/users/${userName}`);
+            setUserInfo(userResponse.data);
+            setNotFound(false);
+            try {
+                const reposResponse = await axios.get(`https://api.github.com/users/${userName}/repos`);
+                setRepoList(reposResponse.data)
+            } catch(error) {
+                console.log(error);
+            }
+
         } catch(error) {
             console.log(error);
+            setNotFound(true);
+            setUserInfo(null);
+            setRepoList([]);
         } finally {
             setIsFetching(false);
+            setUserName('');
         }
-
-        setUserName('');
     }
 
     function fetchRepos() {
         axios.get(`https://api.github.com/users/${userName}/repos`)
             .then(response => setRepoList(response.data))
             .catch(error => console.log(error))
-            .finally(() => setIsFetching(false));    
+            .finally
     }
     
     function fetchUser() {
@@ -61,13 +71,13 @@ export function HomePage() {
         .then(response => {
             setNotFound(false);
             setUserInfo(response.data);
-            console.log(userInfo);
         })
         .catch(error => {
             console.log(error);
             setUserInfo(null);
             setNotFound(true);
-            setIsFetching(false);
+            setRepoList([]);
+            // setIsFetching(false);
         });
     }
 
@@ -92,20 +102,19 @@ export function HomePage() {
             
                 </View>
 
+
             </View>
-            <View style={styles.reposContainer}>
+            <View style={styles.container}>
                 {
-                    isFetching ? 
-                        <Text>Loading...</Text> 
-                        :
-                        <>
-                            <UserContainer userInfo={userInfo}/>
-                            <RepoList 
-                                repoList={repoList} 
-                                notFound={notFound}
-                            />
-                        </> 
-                } 
+                    isFetching ? <Text>Loading...</Text> :
+                    <View style={styles.reposContainer}>
+                    <UserContainer userInfo={userInfo} notFound={notFound}/>
+                    <RepoList 
+                        repoList={repoList} 
+                        notFound={notFound}
+                    />                 
+                    </View>
+                }                
             </View>
 
         </View>

@@ -20,21 +20,17 @@ export function RepoList({repoList, notFound}:Props) {
     )
   }
   
-  if (notFound){
-    return <Text>No user was found</Text>
-  } 
+  return notFound ? null : 
 
-  return (
-    <>
-    {
-      repoList.length === 0 ? null : 
-      <FlatList 
-        data={repoList}
-        keyExtractor={item =>item.id}
-        renderItem={({item}) => renderItem(item)}
-        />
-    }
-    </>
+  (
+      <View style={styles.flatListContainer}>
+        <FlatList
+          data={repoList}
+          keyExtractor={item =>item.id}
+          renderItem={({item}) => renderItem(item)}
+          
+          />
+      </View>
   );
   
 

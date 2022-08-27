@@ -3,9 +3,9 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        padding: 10
-      },
+        padding: 10,
+        alignItems: 'center',
+    },
     text: {
         color: '#fff'
     },
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: 16,
-        width: '100%'
+        width: '60%'
     },
     textInput: {
         width: "96%",
@@ -44,11 +44,14 @@ export const styles = StyleSheet.create({
         borderRadius: 3
     },
     reposContainer: {
-        justifyContent: 'center',
+        // justifyContent: 'center',
         alignItems: 'center',
         marginTop: 30,
-        overflow: 'scroll'     
-        // flex: 2,
-
+        borderWidth: 1,
+        borderColor: 'black',
+        padding: 30,
+        width: '95%',
+        minHeight: '20%',
+        borderRadius: 20,
     }
 });
