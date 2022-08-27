@@ -59,29 +59,6 @@ export function HomePage() {
         }
     }
 
-    function fetchRepos() {
-        axios.get(`https://api.github.com/users/${userName}/repos`)
-            .then(response => setRepoList(response.data))
-            .catch(error => console.log(error))
-            .finally
-    }
-    
-    function fetchUser() {
-        axios.get(`https://api.github.com/users/${userName}`)
-        .then(response => {
-            setNotFound(false);
-            setUserInfo(response.data);
-        })
-        .catch(error => {
-            console.log(error);
-            setUserInfo(null);
-            setNotFound(true);
-            setRepoList([]);
-            // setIsFetching(false);
-        });
-    }
-
-
     return (
         <View style={styles.container}>
             <View style={styles.header}>
