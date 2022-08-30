@@ -1,11 +1,15 @@
-import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import { 
     View, 
     Text, 
     TextInput,
     TouchableOpacity
- } from 'react-native';
+} from 'react-native';
+
+import axios from 'axios';
+import { TailSpin } from 'react-loader-spinner';
+
+
 import { RepoList } from '../RepoList';
 import { UserContainer } from '../UserContainer';
 
@@ -15,6 +19,11 @@ export interface Repository {
     id: string;
     name: string;
     description: string;
+    owner: {
+        login: string;
+    }
+    html_url: string;
+    language: string;
 }
 
 export interface UserInfo {
@@ -83,7 +92,13 @@ export function HomePage() {
             </View>
             <View style={styles.container}>
                 {
-                    isFetching ? <Text>Loading...</Text> :
+                    isFetching ? <TailSpin 
+                                    height="80"
+                                    width="80"
+                                    color="#000"
+                                    ariaLabel='tail-spin-loading'
+                                    visible={true}
+                                /> :
                     <View style={styles.reposContainer}>
                     <UserContainer userInfo={userInfo} notFound={notFound}/>
                     <RepoList 

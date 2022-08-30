@@ -2,26 +2,34 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({ 
   flatListContainer: {
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
-    // width: '90%',
     marginBottom: 8,
     marginTop: 8,
     
   },
 
   repoContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
     marginTop: 10,
     padding: 16,
-    // width: '40%',
     borderWidth: 1,
     borderRadius: 6,
-    borderColor: '#30363d'
+    borderColor: '#30363d',
+    
+    // marginHorizontal: 5
   },
 
-  repoText: {
-    fontSize: 16,
+  repoTitle: {
+    fontSize: 32,
+    marginBottom: 15,
   },
+
+  repoDescription: {
+    fontSize: 16,
+    marginBottom: 15
+  },
+  repoLanguage: {
+    fontSize: 12,
+    fontStyle: 'italic'
+  }
 });

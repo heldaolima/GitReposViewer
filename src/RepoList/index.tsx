@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Linking } from 'react-native';
 import axios from 'axios';
 
 import { styles } from './styles';
@@ -15,7 +15,17 @@ export function RepoList({repoList, notFound}:Props) {
   function renderItem(repo: Repository) {
     return (
       <View style={styles.repoContainer}>
-        <Text style={styles.repoText}>{repo.name}: {repo.description}</Text>
+        <Text style={styles.repoTitle} 
+          onPress={() => Linking.openURL(repo.html_url)}
+          >
+              {repo.name}
+        </Text>
+        <Text style={styles.repoDescription}>
+          {repo.description ? repo.description : "No description"}
+        </Text>
+        <Text style={styles.repoLanguage}>
+          {repo.language}
+        </Text>
       </View>
     )
   }
@@ -28,7 +38,7 @@ export function RepoList({repoList, notFound}:Props) {
           data={repoList}
           keyExtractor={item =>item.id}
           renderItem={({item}) => renderItem(item)}
-          
+          numColumns={2}
           />
       </View>
   );

@@ -53,5 +53,6 @@ export const styles = StyleSheet.create({
         width: '95%',
         minHeight: '20%',
         borderRadius: 20,
+        // overflow: 'scroll'
     }
 });
