@@ -2,20 +2,12 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        alignItems: "center"
-        // borderWidth: 1,
-        // borderColor: 'black',
-        // padding: 30,
-        // width: '70%',
-        // minHeight: '20%',
-        // borderRadius: 20,
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // overflow: 'scroll'
+        alignItems: "center",
     },
     title: {
         fontSize: 40,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: '#fff',
     },
     image: {
         marginBottom: 20,
@@ -26,12 +18,15 @@ export const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: 24,
-        fontWeight: '500'
+        fontWeight: '500',
+        color: '#fff',
     },
     numbersContainer: {
         margin: 30,
+        color: '#fff',
     },
     numberText: {
         fontSize: 20,
+        color: '#fff',
     }
 })

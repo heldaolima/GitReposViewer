@@ -1,10 +1,15 @@
 import { StyleSheet } from 'react-native';
+import { globalStyle } from '../utils/globalStyle';
 
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-        alignItems: 'center',
+        // alignItems: 'center',
+        // overflow: 'scroll'
+    },
+    scrollView: {
+        
     },
     text: {
         color: '#fff'
@@ -14,25 +19,30 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        overflow: 'visible'
+        overflow: 'visible',
+        backgroundColor: '#161B22',
+        padding: 15
     },
     title: {
         fontWeight: "bold",
-        fontSize: 24
+        fontSize: 24,
+        color: "#fff"
     },
     inputContainer: {
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: 16,
-        width: '60%'
+        width: '60%',
+        color: '#fff',
     },
     textInput: {
-        width: "96%",
+        width: "100%",
         height: 40,
         margin: 12,
         borderWidth: 1,
         padding: 10,
-        borderRadius: 3
+        borderRadius: 3,
+        backgroundColor: '#0D1117'
     },
     button: {
         height: 32,
@@ -43,16 +53,17 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 3
     },
-    reposContainer: {
-        // justifyContent: 'center',
-        alignItems: 'center',
+    userContainer: {
         marginTop: 30,
         borderWidth: 1,
         borderColor: 'black',
         padding: 30,
-        width: '95%',
-        minHeight: '20%',
-        borderRadius: 20,
-        // overflow: 'scroll'
+        position: 'relative',
+        width:'99%',
+        borderRadius: 5,
+        backgroundColor: globalStyle.colors.backgroundSecondary,
+    },
+    reposContainer: {
+
     }
 });

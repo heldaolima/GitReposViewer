@@ -38,7 +38,7 @@ export function RepoList({repoList, notFound}:Props) {
           data={repoList}
           keyExtractor={item =>item.id}
           renderItem={({item}) => renderItem(item)}
-          numColumns={2}
+
           />
       </View>
   );

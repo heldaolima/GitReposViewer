@@ -3,7 +3,9 @@ import {
     View, 
     Text, 
     TextInput,
-    TouchableOpacity
+    TouchableOpacity,
+    ScrollView,
+    Image
 } from 'react-native';
 
 import axios from 'axios';
@@ -14,6 +16,7 @@ import { RepoList } from '../RepoList';
 import { UserContainer } from '../UserContainer';
 
 import { styles } from './styles';
+import * as githubLogo from '../assets/githubLogo.png';
 
 export interface Repository {
     id: string;
@@ -81,6 +84,7 @@ export function HomePage() {
                         autoFocus={true}
                         value={userName}
                         onChangeText={input => setUserName(input)}
+                        onSubmitEditing={handleSubmit}
                     />
                     <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                         <Text style={styles.text}>Search</Text>
@@ -90,24 +94,31 @@ export function HomePage() {
 
 
             </View>
-            <View style={styles.container}>
+            <ScrollView style={styles.scrollView}>
                 {
-                    isFetching ? <TailSpin 
-                                    height="80"
-                                    width="80"
-                                    color="#000"
-                                    ariaLabel='tail-spin-loading'
-                                    visible={true}
-                                /> :
-                    <View style={styles.reposContainer}>
-                    <UserContainer userInfo={userInfo} notFound={notFound}/>
-                    <RepoList 
-                        repoList={repoList} 
-                        notFound={notFound}
-                    />                 
-                    </View>
+                    isFetching ?
+                        <Text>Loading</Text> 
+                            // <TailSpin 
+                            //         height="80"
+                            //         width="80"
+                            //         color="#000"
+                            //         ariaLabel='tail-spin-loading'
+                            //         visible={true}
+                            //     /> 
+                            :
+                    <>
+                        <View style={styles.userContainer}>
+                            <UserContainer userInfo={userInfo} notFound={notFound}/>
+                        </View>
+                        <View style={styles.reposContainer}>
+                            <RepoList
+                                repoList={repoList}
+                                notFound={notFound}
+                            />
+                        </View>
+                    </>
                 }                
-            </View>
+            </ScrollView>
 
         </View>
   );

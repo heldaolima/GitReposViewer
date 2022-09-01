@@ -17,8 +17,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    padding: 10,
+    backgroundColor: '#010409',
+    padding: 0,
     overflow: 'scroll'
   },
  
