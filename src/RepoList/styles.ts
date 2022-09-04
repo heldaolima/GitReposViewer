@@ -2,10 +2,8 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({ 
   flatListContainer: {
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    marginBottom: 8,
-    marginTop: 8,
+    marginBottom: 12,
+    marginTop: 12,
   },
 
   repoContainer: {

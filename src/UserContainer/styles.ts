@@ -22,11 +22,21 @@ export const styles = StyleSheet.create({
         color: '#fff',
     },
     numbersContainer: {
-        margin: 30,
+        flexDirection: 'row',
+        marginTop: 30,
+    },
+    numberContainer: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        margin: 15
+    },
+    numberKey: {
+        fontSize: 15,
         color: '#fff',
     },
-    numberText: {
-        fontSize: 20,
-        color: '#fff',
+    numberValue: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: '#fff'
     }
 })

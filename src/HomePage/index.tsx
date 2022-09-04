@@ -85,19 +85,25 @@ export function HomePage() {
                         value={userName}
                         onChangeText={input => setUserName(input)}
                         onSubmitEditing={handleSubmit}
+                        placeholderTextColor={"#fff"}
+                        selectionColor={"#fff"}
                     />
                     <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                         <Text style={styles.text}>Search</Text>
                     </TouchableOpacity>
-            
                 </View>
 
-
             </View>
-            <ScrollView style={styles.scrollView}>
+            <ScrollView 
+                contentContainerStyle={{
+                            alignItems:'center',
+                            // justifyContent: 'center',
+                            marginTop: 10
+                        }}
+                >
                 {
                     isFetching ?
-                        <Text>Loading</Text> 
+                        <Text style={{color:'white'}}>Loading</Text> 
                             // <TailSpin 
                             //         height="80"
                             //         width="80"

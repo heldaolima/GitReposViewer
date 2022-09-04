@@ -8,9 +8,6 @@ export const styles = StyleSheet.create({
         // alignItems: 'center',
         // overflow: 'scroll'
     },
-    scrollView: {
-        
-    },
     text: {
         color: '#fff'
     },
@@ -42,7 +39,8 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         borderRadius: 3,
-        backgroundColor: '#0D1117'
+        backgroundColor: '#0D1117',
+        color: '#fff'
     },
     button: {
         height: 32,

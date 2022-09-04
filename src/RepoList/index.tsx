@@ -35,6 +35,7 @@ export function RepoList({repoList, notFound}:Props) {
   (
       <View style={styles.flatListContainer}>
         <FlatList
+          // contentContainerStyle={{alignItems:'center', justifyContent:'space-around'}}
           data={repoList}
           keyExtractor={item =>item.id}
           renderItem={({item}) => renderItem(item)}
