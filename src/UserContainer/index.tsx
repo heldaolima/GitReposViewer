@@ -5,24 +5,10 @@ import { styles } from "./styles";
 
 interface Props {
     userInfo: UserInfo | null;
-    notFound: boolean;
 }
 
-// export interface UserInfo {
-//   login: string;
-//   avatar_url: string;
-//   name: string;
-//   public_repos: string;
-//   followers: string;
-//   following: string;
-// }
-
-export function UserContainer({userInfo, notFound}:Props) {
-    if (notFound) {
-        return <Text>User not Found</Text>
-    }
-    
-    else return (
+export function UserContainer({userInfo}:Props) {
+    return (
         <View style={styles.container}>
             <Image source={{uri: userInfo?.avatar_url}} style={styles.image} />
             <Text style={styles.title}>{userInfo?.login}</Text>

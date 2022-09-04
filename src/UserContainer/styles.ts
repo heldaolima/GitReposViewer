@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
     },
     title: {
-        fontSize: 40,
+        fontSize: 35,
         fontWeight: 'bold',
         color: '#fff',
     },
@@ -23,12 +23,13 @@ export const styles = StyleSheet.create({
     },
     numbersContainer: {
         flexDirection: 'row',
-        marginTop: 30,
+        marginTop: 15,
     },
     numberContainer: {
         flexDirection: 'column',
         alignItems: 'center',
-        margin: 15
+        margin: 15,
+        marginBottom: 5
     },
     numberKey: {
         fontSize: 15,

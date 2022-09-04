@@ -11,8 +11,8 @@ export const styles = StyleSheet.create({
     padding: 16,
     borderWidth: 1,
     width: '100%',
-    overflow: 'visible',
-    borderRadius: 6,
+    // overflow: 'visible',
+    borderRadius: 10,
     borderColor: '#30363d',
     backgroundColor: '#0D1117'
     // overflow: 'scroll'

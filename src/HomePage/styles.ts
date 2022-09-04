@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
+        marginTop: 20
         // alignItems: 'center',
         // overflow: 'scroll'
     },
@@ -18,7 +19,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         overflow: 'visible',
         backgroundColor: '#161B22',
-        padding: 15
+        padding: 10
     },
     title: {
         fontWeight: "bold",
@@ -28,8 +29,7 @@ export const styles = StyleSheet.create({
     inputContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: 16,
-        width: '60%',
+        width: '90%',
         color: '#fff',
     },
     textInput: {
@@ -40,28 +40,6 @@ export const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 3,
         backgroundColor: '#0D1117',
-        color: '#fff'
+        color: 'white'
     },
-    button: {
-        height: 32,
-        width: 120,
-        padding: 5,
-        backgroundColor: "#000",
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 3
-    },
-    userContainer: {
-        marginTop: 30,
-        borderWidth: 1,
-        borderColor: 'black',
-        padding: 30,
-        position: 'relative',
-        width:'99%',
-        borderRadius: 5,
-        backgroundColor: globalStyle.colors.backgroundSecondary,
-    },
-    reposContainer: {
-
-    }
 });

@@ -33,7 +33,7 @@ export function RepoList({repoList, notFound}:Props) {
   return notFound ? null : 
 
   (
-      <View style={styles.flatListContainer}>
+      // <View style={styles.flatListContainer}>
         <FlatList
           // contentContainerStyle={{alignItems:'center', justifyContent:'space-around'}}
           data={repoList}
@@ -41,7 +41,7 @@ export function RepoList({repoList, notFound}:Props) {
           renderItem={({item}) => renderItem(item)}
 
           />
-      </View>
+      // </View>
   );
   
 

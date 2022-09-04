@@ -17,6 +17,7 @@ import { UserContainer } from '../UserContainer';
 
 import { styles } from './styles';
 import * as githubLogo from '../assets/githubLogo.png';
+import { UserAndRepos } from '../UserAndRepos';
 
 export interface Repository {
     id: string;
@@ -88,44 +89,21 @@ export function HomePage() {
                         placeholderTextColor={"#fff"}
                         selectionColor={"#fff"}
                     />
-                    <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                        <Text style={styles.text}>Search</Text>
-                    </TouchableOpacity>
                 </View>
 
             </View>
-            <ScrollView 
-                contentContainerStyle={{
-                            alignItems:'center',
-                            // justifyContent: 'center',
-                            marginTop: 10
-                        }}
-                >
+            <View style={{alignItems:'center', justifyContent:'center'}}>
                 {
                     isFetching ?
-                        <Text style={{color:'white'}}>Loading</Text> 
-                            // <TailSpin 
-                            //         height="80"
-                            //         width="80"
-                            //         color="#000"
-                            //         ariaLabel='tail-spin-loading'
-                            //         visible={true}
-                            //     /> 
-                            :
-                    <>
-                        <View style={styles.userContainer}>
-                            <UserContainer userInfo={userInfo} notFound={notFound}/>
-                        </View>
-                        <View style={styles.reposContainer}>
-                            <RepoList
-                                repoList={repoList}
-                                notFound={notFound}
-                            />
-                        </View>
-                    </>
-                }                
-            </ScrollView>
-
+                        <Text style={{color: 'white'}}>Loading...</Text>
+                        :
+                        <UserAndRepos 
+                            userInfo={userInfo}
+                            notFound={notFound}
+                            repoList={repoList}    
+                        />
+                }
+            </View>
         </View>
   );
 }
