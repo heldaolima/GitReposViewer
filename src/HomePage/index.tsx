@@ -3,20 +3,12 @@ import {
     View, 
     Text, 
     TextInput,
-    TouchableOpacity,
-    ScrollView,
     Image
 } from 'react-native';
 
 import axios from 'axios';
-import { TailSpin } from 'react-loader-spinner';
-
-
-import { RepoList } from '../RepoList';
-import { UserContainer } from '../UserContainer';
 
 import { styles } from './styles';
-import * as githubLogo from '../assets/githubLogo.png';
 import { UserAndRepos } from '../UserAndRepos';
 
 export interface Repository {
@@ -75,7 +67,13 @@ export function HomePage() {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.title}>GitReposConsumer</Text>
+                <View style={styles.imageAndText}>
+                    <Image 
+                        source={require('../assets/githubLogo.png')}
+                        style={styles.logo}    
+                    />
+                    <Text style={styles.title}>GitReposConsumer</Text>
+                </View>
                 <View style={styles.inputContainer}>
             
                     <TextInput 
@@ -92,18 +90,18 @@ export function HomePage() {
                 </View>
 
             </View>
-            <View style={{alignItems:'center', justifyContent:'center'}}>
-                {
-                    isFetching ?
-                        <Text style={{color: 'white'}}>Loading...</Text>
-                        :
-                        <UserAndRepos 
-                            userInfo={userInfo}
-                            notFound={notFound}
-                            repoList={repoList}    
-                        />
-                }
-            </View>
+                <View style={{alignItems:'center', justifyContent:'center'}}>
+                    {
+                        isFetching ?
+                            <Text style={{color: 'white'}}>Loading...</Text>
+                            :
+                            <UserAndRepos
+                                userInfo={userInfo}
+                                notFound={notFound}
+                                repoList={repoList}    
+                            />
+                    }
+                </View>
         </View>
   );
 }

@@ -2,24 +2,31 @@ import { StyleSheet } from 'react-native';
 import { globalStyle } from '../utils/globalStyle';
 
 export const styles = StyleSheet.create({
+    
     container: {
         flex: 1,
         padding: 10,
-        marginTop: 20
-        // alignItems: 'center',
-        // overflow: 'scroll'
+        marginTop: 20,
     },
     text: {
         color: '#fff'
     },
-
+    
     header: {
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
         overflow: 'visible',
         backgroundColor: '#161B22',
-        padding: 10
+        padding: 10,
+    },
+    imageAndText: {
+      flexDirection: 'row'  
+    },
+    logo: {
+        width: 30,
+        height: 30,
+        marginRight: 15,      
     },
     title: {
         fontWeight: "bold",
