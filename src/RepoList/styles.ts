@@ -23,6 +23,7 @@ export const styles = StyleSheet.create({
   repoTitle: {
     fontSize: 24,
     marginBottom: 15,
+    textDecorationLine: 'underline',
     color: '#fff',
   },
 

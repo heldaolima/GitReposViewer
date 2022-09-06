@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, Linking } from 'react-native';
-import axios from 'axios';
 
 import { styles } from './styles';
 import { Repository} from '../HomePage';

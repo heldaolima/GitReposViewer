@@ -25,6 +25,7 @@ export function UserAndRepos({userInfo, notFound, repoList}:Props) {
             <View style={styles.userContainer}>
                 <UserContainer userInfo={userInfo} />
             </View>
+        
             <View style={styles.reposContainer}>
                 <RepoList repoList={repoList} notFound={notFound}/>
             </View>
