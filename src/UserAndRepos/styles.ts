@@ -24,5 +24,7 @@ export const styles = StyleSheet.create({
         backgroundColor: globalStyle.colors.backgroundSecondary,
     },
 
-    reposContainer: {}
+    reposContainer: {
+        flex:1
+    }
 })

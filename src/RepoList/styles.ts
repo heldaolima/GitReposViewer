@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   flatListContainer: {
     marginBottom: 12,
     marginTop: 12,
+    paddingBottom: 50
   },
 
   repoContainer: {

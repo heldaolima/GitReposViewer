@@ -49,4 +49,9 @@ export const styles = StyleSheet.create({
         backgroundColor: '#0D1117',
         color: 'white'
     },
+    loadingContainer: {
+        height: '80%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });

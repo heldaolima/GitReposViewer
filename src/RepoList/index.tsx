@@ -33,15 +33,15 @@ export function RepoList({repoList, notFound}:Props) {
   return notFound ? null : 
 
   (
-      // <View style={styles.flatListContainer}>
+      <View style={styles.flatListContainer}>
         <FlatList
           // contentContainerStyle={{alignItems:'center', justifyContent:'space-around'}}
           data={repoList}
           keyExtractor={item =>item.id}
           renderItem={({item}) => renderItem(item)}
-
+          contentContainerStyle={{ paddingBottom: 100 }}
           />
-      // </View>
+      </View>
   );
   
 

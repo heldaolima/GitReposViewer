@@ -3,7 +3,8 @@ import {
     View, 
     Text, 
     TextInput,
-    Image
+    Image, 
+    ActivityIndicator
 } from 'react-native';
 
 import axios from 'axios';
@@ -37,7 +38,6 @@ export function HomePage() {
     const [isFetching, setIsFetching] = useState(false);
     const [notFound, setNotFound] = useState(false);
     const [repoList, setRepoList] = useState<Repository[]>([]);
-    
     
     async function handleSubmit() {
         setIsFetching(true);
@@ -90,10 +90,16 @@ export function HomePage() {
                 </View>
 
             </View>
+            
                 <View style={{alignItems:'center', justifyContent:'center'}}>
                     {
                         isFetching ?
-                            <Text style={{color: 'white'}}>Loading...</Text>
+                            <View style={styles.loadingContainer}>
+                                <ActivityIndicator 
+                                    size='large' 
+                                    color='#53A144'
+                                />
+                            </View>
                             :
                             <UserAndRepos
                                 userInfo={userInfo}
